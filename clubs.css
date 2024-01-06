@@ -1,0 +1,48 @@
+body{
+    background-image: url(assets/clubs.png.jpg);
+    background-size: cover;
+}
+.container{
+    margin: 30px;
+    padding: 8px;
+}
+.header_nav_club{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+.header_nav-logo{
+    width: 130px;
+}
+.header_nav-items_club{
+    display: flex;
+    margin-right: 30px;
+    gap: 25px;
+    color: white;
+    align-items: center;
+   
+
+}
+.header_nav-item_club{
+    color:white;
+    font-family: cursive;
+    font-size: 20px;
+    text-decoration: none;
+}
+.header_nav-logo{
+    border-radius:75px;
+ }
+ .info{
+    display: flex;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-weight: 900;
+ }
+ a:visited{
+    color: white;
+    text-decoration: none;
+ }
+ .header_nav-item_club{
+    text-decoration: none;
+ }
