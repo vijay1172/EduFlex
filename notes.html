@@ -6,409 +6,362 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Notes</title>
         <style>
-        *{
-            margin:0px;
-            padding:0px;
-        }
-        body{
-            background-image: url('images2.avif');
-            background-repeat: no-repeat;
-            background-size:cover;
-        }
-        header{
-            position:relative;
-            left:10px;
-            background-color:black 30%;
-            width:100vw;
-            height:vh;
-            margin:0px;
-            padding: 0px;
-           
-            /* border: 2px solid rgb(99, 4, 99); */
-            
-        }
-        nav{
-            display:inline;
-            color:white;
-            background-color: grey;
-            margin:1px;
-            position:relative;
-            left:320px
-            
-        }
-        
-        li{
-            border-radius: 9px;
-            list-style: none;
-            display: inline;
-            margin:29px;
-            width:16vw;
-            padding:11px 19px;
-            font-family: 'Times New Roman', Times, serif;
-            border:3px solid purple;
-            background-color: rgb(131, 64, 131);
-            font-size: 22px;
-        }
-        .cs link
-        {
-            color:white;
-            text-decoration: none;
-        }
-        a:active
-        {
-            color:white;
-        }
-        a:visited
-        {
-            color:white;
-        }
-       
-        .button
-        {
-            border-radius: 9px;
-            cursor:pointer;
-            color:white;
-            display: inline;
-            margin:29px;
-            /* width:16vw; */
-            padding:11px;
-            font-size: 22px;
-            font-family: 'Times New Roman', Times, serif;
-            border:none;
-            background-color: rgb(131, 64, 131);
-        }
+            @keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
-        .dropdown
-        {
-            position:relative;
-            display:inline-block;
-        }
-        
-        .notescontent
-        {
-            display:none;
-            color:white;
-            position:absolute;
-            background-color:darkkhaki;
-            min-width: 160px;
-            box-shadow: 8px 16 px 0 px rgba(0,0,0,0.2);
-            z-index:1;
-        }
-        
-        .notescontent a{
-                color:black;
-                padding:12px 16px;
-                display: block;
-        }
+/* Keyframes for sliding in the text from top to bottom */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-        .notescontent a:hover{
-            background-color:blueviolet;
-        }        
-        .dropdown:hover .notescontent{
-            display:block;
-        }
-        .dropdown:hover .button{
-            background-color:blueviolet;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* background-image: url('images2.avif'); */
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: gray;
+}
+header {
+    width: 100%;
+    padding: 0;
+}
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: flex;
+    border-radius: 9px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    width: 10vw;
+    padding: 2px;
+    font-family: 'Times New Roman', Times, serif;
+    border: 3px solid purple;
+    background-color: rgb(131, 64, 131);
+    font-size: 20px;
+    text-align: center;
+}
+li:hover {  /* Hover effects for list items */
+  background-color: #9b30ff; /* Change background color on hover */
+  transform: scale(1.1); /* Slightly scale up on hover */
+}
 
+/* Optional: Underline hover effect */
+li a {
+  position: relative;
+  overflow: hidden;
+}
 
+li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px; /* Adjust underline height as needed */
+  bottom: -2px; /* Adjust underline position as needed */
+  left: 0;
+  background-color: #fff; /* Change underline color */
+  transition: width 0.3s ease-in-out;
+}
 
-        .container
-        {
-            display: flex;
-            width: 90vw;
-            height:40vh;
-        }
+li:hover a::after {
+  width: 100%;  /* Animate underline to full width on hover */
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+.button {
+    border-radius: 9px;
+    cursor: pointer;
+    color: white;
+    display: inline;
+    margin: 29px;
+    padding: 11px;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    background-color: rgb(131, 64, 131);
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.notescontent {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(160, 119, 255, 0.2);
+    z-index: 1;
+}
+.notescontent a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.notescontent a:hover {
+    background-color: #f1f1f1;
+}
+.dropdown:hover .notescontent {
+    display: block;
+}
+.dropdown:hover .button {
+    background-color: #ddd;
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Ensure items are side by side */
+    gap: 20px;
+    padding: 20px;
+    width: 100vw;
+    flex: 1;
+}
+.cs, .ec, .ee, .ce {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 4vh;
+    margin-top: 1px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 15px;
+    border: 2px solid rgb(207, 165, 207);
+    border-radius: 20px;
+    height: 350px;
+    width: 300px;
+    background-image: linear-gradient(135deg, #4892c3 0%, #9599E2 100%);
+    opacity: .8;
+    box-shadow: 1px 2px 3px 3px;
+    animation: slideIn 0.8s ease-in-out;
+}
+.cs:hover,
+.ec:hover,
+.ee:hover,
+.ce:hover {
+    transform: scale(1.1);
+    transition: transform 0.4s ease;
+}
+.cs:hover ~ .ec,
+.cs:hover ~ .ee,
+.cs:hover ~ .ce,
+.ec:hover ~ .cs,
+.ec:hover ~ .ee,
+.ec:hover ~ .ce,
+.ee:hover ~ .cs,
+.ee:hover ~ .ec,
+.ee:hover ~ .ce,
+.ce:hover ~ .cs,
+.ce:hover ~ .ec,
+.ce:hover ~ .ee {
+    filter: blur(1px);
+}
 
-        .cs{
-            display: flex;
-            font-weight: bold;
-            flex-direction: column;
-            font-size: 4vh;
-            font-family: 'Times New Roman', Times, serif;
-            margin:30px;
-            padding:10px;
-            border: 3px solid purple;
-            border-radius:4px;
-            width:124vw;
-            height:78vh;
-            text-align: center;
-            background-image: linear-gradient(rgb(137, 45, 137) , rgb(208, 168, 208) );
-            border-radius: 23px;
-            opacity:.8;
-            box-shadow: 2px 3px 4px 5px;
-            font:dark grey;
-        }
-        .csgrid 
-        {
-            font-weight:lighter;
-            text-align: left;
-            padding:9px;
-            margin: 4px;
-            font-size: 29px;
-        }
-        .cs a:hover{
-            background-color:purple;
-        }
-        .ec{
-            font-weight: bold;
-            display: flex;
-            flex-direction: column;
-            font-size: 4vh;
-            font-family: 'Times New Roman', Times, serif;
-            margin:30px;
-            padding:10px;
-            border: 3px solid purple;
-            border-radius:4px;
-            width:124vw;
-            height:78vh;
-            text-align: center;
-            background-image: linear-gradient(rgb(137, 45, 137) , rgb(208, 168, 208) );
-            border-radius: 33px;
-            opacity: .8;
-            color:black;
-            box-shadow: 2px 3px 4px 5px;
-            font:dark grey;
-            
-        }
-        .ec a:hover{
-            background-color:purple;
-        }
-        .ecgrid
-        {
-            font-weight: lighter;
-            text-align: left;
-            padding:9px;
-            margin: 4px;
-            font-size: 29px;
-        }
-        .ee{
-            font-weight: bold;
-            display: flex;
-            flex-direction: column;
-            font-size: 4vh;
-            font-family: 'Times New Roman', Times, serif;
-            margin:30px;
-            padding:10px;
-            border: 3px solid purple;
-            border-radius:4px;
-            width:124vw;
-            height:78vh;
-            text-align: center;
-            background-image: linear-gradient(rgb(137, 45, 137) , rgb(208, 168, 208) );
-            border-radius: 23px;
-            opacity:.8;
-            box-shadow: 2px 3px 4px 5px;
-            font:dark grey;
-            
-        }
-        .ee a:hover{
-            background-color:purple;
-        }
-        
-        .eegrid
-        {
-            font-weight: lighter;
-            text-align: left;
-            padding:9px;
-            margin: 4px;
-            font-size: 29px;
-        }
-        .ce{
-            font-weight: bold;
-            display: flex;
-            flex-direction: column;
-            font-size: 4vh;
-            font-family: 'Times New Roman', Times, serif;
-            margin:30px;
-            padding:10px;
-            border: 3px solid purple;
-            border-radius:4px;
-            width:124vw;
-            height:78vh;
-            text-align: center;
-            background-image: linear-gradient(rgb(137, 45, 137) , rgb(208, 168, 208) );
-            border-radius: 23px;
-            opacity:.8;
-            box-shadow: 2px 3px 4px 5px;
-            
-            font:dark grey;
-            
-        }
-        .ce a:hover{
-            background-color:purple;
-        }
-        
-        .cegrid
-        {
-            font-weight: lighter;
-            text-align: left;
-            padding:9px;
-            margin: 4px;
-            font-size: 29px;
-        }
-        .underline
-        {
-            text-decoration:none;
-        }
-        footer{
-            background:purple;
-            color:white;
-            width:100vw;
-            position:relative;
-            top: 380px;
-            text-align: center;        }
-
-        img{
-            width:120px;
-            height:12vh;
-            position:relative;
-            right:920px;
-            top:21px;
-            width:6vw;
-            border-radius: 235px;
-            box-shadow:1px 0.1px 0.3px 0.9px;
-        }
-        button1:hover
-        {
-            background-color:black;
-            width: 2px;
-        }
+.csgrid, .ecgrid, .eegrid, .cegrid {
+    font-weight: 200;
+    color: black;
+    text-align: left;
+    justify-content: left;
+    display: flex;
+    padding: 5px;
+    margin: 7px;
+    font-size: 14px;
+    animation: slideDown 0.5s ease-in-out;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards; /* Ensures the animation stays at its end state */
+    opacity: 0; /* Starts off invisible */
+}
+.underline {
+    text-decoration: none;
+}
+footer {
+    background: purple;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+img {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+    flex-direction: left;
+    align-items:flex-start;
+    border-radius: 25px;
+    display: flex;
+}
         </style>
-</head>
-
-<body>
-    <header>
-    <nav>
-        <ul>
-           <a href="" class="underline"><li>Home</li></a>
-
-           <a href="" class="underline"><li>About</li></a>
-            <div class="dropdown">
-            
-            <button class="button">Notes</button>
-            
-            <div class="notescontent">
-                <a href="#">Year</a>
-                <div class="yearcontent">
-                    <a href="#">1st</a>
-                    <div class="firstcontent">
-                        <a href="#"> Branch</a>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <a href="index.html" class="underline"><li>Home</li></a>
+                    <a href="club.html" class="underline"><li>Assignments</li></a>
+                    <a href="pyqs.html" class="underline"><li>PYQs</li></a>
+                    <a href="index.html"><img src="./assets/Logo.png" alt="Image"></a>
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+            <div class="cs">
+                CSE
+                <a href="https://drive.google.com/drive/u/1/my-drive" target="_target" class="underline">
+                    <div class="csgrid">
+                        Programming In C
                     </div>
-                    <a href="#">2nd</a>
-                    <div class="secondcontent">
-                        <a href="#"> Branch</a>
+                </a>
+                <a href="#" class="underline">
+                    <div class="csgrid">
+                        Information Technology
                     </div>
-                    <a href="#">3rd</a>
-                    <div class="thirdcontent">
-                        <a href="#"> Branch</a>
+                </a>
+                <a href="#" class="underline">
+                    <div class="csgrid">
+                        Engineering Mathematics
                     </div>
-                    <a href="#">4th</a>
-                    <div class="fourth content">
-                        <a href="#"> Branch</a>
+                </a>
+                <a href="#" class="underline">
+                    <div class="csgrid">
+                        Engineering Chemistry
                     </div>
-                </div>
+                </a>
+                <a href="#" class="underline">
+                    <div class="csgrid">
+                        Digital Design
+                    </div>
+                </a>
             </div>
-            <a href="" class="underline"><li>PYQs</li></a>
-            <img src="img.avif" alt="">
+            <div class="ec">
+                ECE
+                <a href="#" class="underline">
+                    <div class="ecgrid">
+                        Elements Of Electronics
+                    </div>
+                </a>
+                <a href="#" class="underline">
+                    <div class="ecgrid">
+                        Electronics Workshop
+                    </div>
+                </a>
+                <a href="#" class="underline">
+                    <div class="ecgrid">
+                        Engineering Mathematics
+                    </div>
+                </a>
+                <a href="#" class="underline">
+                    <div class="ecgrid">
+                        Engineering Chemistry
+                    </div>
+                </a>
+                <a href="#" class="underline">
+                    <div class="ecgrid">
+                        Introduction To Computing
+                    </div>
+                </a>
+            </div>
+            <div class="ee">
+                EE
+                <a href="#" class="underline">
+                    <div class="eegrid">
+                        Elements Of Electrical Engineering
+                    </div>
+                </a>
+                <a href="#" class="underline">
+                    <div class="eegrid">
+                        Communicative English
+                    </div>
+                </a>
+                <a href="#" class="underline">
+                    <div class="eegrid">
+                        Introduction To Computing
+                    </div>
+                </a>
+                <a href="#" class="underline">
+                    <div class="eegrid">
+                        Introduction To Electronics Engineering
+                    </div>
+                </a>
+                <a href="#" class="underline">
+                    <div class="eegrid">
+                        Engineering Physics
+                    </div>
+                </a>
+            </div>
+            <div class="ce">
+                CE
+                <a href="#" class="underline">
+                    <div class="cegrid">
+                        Engineering Physics
+                    </div>
+                </a>
+                <a href="#" class="underline">
+                    <div class="cegrid">
+                        Communicative English
+                    </div>
+                </a>
+                <a href="#" class="underline">
+                    <div class="cegrid">
+                        Information Technology Fundamentals
+                    </div>
+                </a>
+                <a href="#" class="underline">
+                    <div class="cegrid">
+                        Engineering Mechanics
+                    </div>
+                </a>
+                <a href="#" class="underline">
+                    <div class="cegrid">
+                        CAD Drawing
+                    </div>
+                </a>
             </div>
         </div>
-        </ul>
-    </nav>  
-</header>
-
-
-
-<div class="container">
-
-    <div class="cs">
-            CSE
-       <a href="https://drive.google.com/drive/u/1/my-drive" target="_target" class="underline"> <div class="csgrid">
-        Programming In C
-        </div></a>
-       
-       <a href="#" class="underline"> <div class="csgrid">
-        Information Technology
-        </div></a>
-       
-       <a href="#" class="underline"> <div class="csgrid">
-        Engineering Mathematics
-        </div></a>
-       
-       <a href="#" class="underline"> <div class="csgrid">
-        Engineering Chemistry
-        </div></a>
-       
-       <a href="#" class="underline"> <div class="csgrid">
-        Digital Design
-        </div></a>
-       
-    </div>
-
-    <div class="ec" class="underline">
-        ECE
-        <a href="#" class="underline"> <div class="ecgrid">
-        Elements Of Electronics
-        </div></a>
-    
-    <a href="#" class="underline"> <div class="ecgrid">
-        Electronics Workshop
-    </div></a>
-    <a href="#" class="underline"> <div class="ecgrid">
-        Engineering Mathematics
-    </div></a>
-    <a href="#" class="underline"> <div class="ecgrid">
-        Engineering Chemistry
-    </div></a>
-    <a href="#" class="underline"> <div class="ecgrid">
-        Introduction To Computing
-    </div></a>
-    </div>
-
-    <div class="ee">
-        EE
-        <a href="#" class="underline"> <div class="eegrid">
-            Elements Of Electrical Engineering
-            </div></a>
-            
-        <a href="#" class="underline"> <div class="eegrid">
-            Communicative English
-            </div></a>
-            
-        <a href="#" class="underline"> <div class="eegrid">
-            Introduction To Computing
-            </div></a>
-            
-        <a href="#" class="underline"> <div class="eegrid">
-            Introduction To Electronics Engineering
-        </div></a>
-            
-        <a href="#" class="underline"> <div class="eegrid">
-            Engineering Physics
-            </div></a>
-            
-        </div>
-        <div class="ce">
-            CE
-            <a href="#" class="underline"> <div class="eegrid">
-                Engineering Physics
-                </div></a>
-            <a href="#" class="underline"> <div class="eegrid">
-                Communicative English
-                </div></a>
-            <a href="#" class="underline"> <div class="eegrid">
-                Information Technology Fundamentals
-                </div></a>
-            <a href="#" class="underline"> <div class="eegrid">
-                Engineering Mechanics
-                </div></a>
-            <a href="#" class="underline"> <div class="eegrid">
-                CAD Drawing
-                </div></a>
-        </div>
-</div>
-<footer>
-    copyright &copy EduFlex
-</footer>
-</body>
+        <footer>
+            copyright &copy EduFlex 2024
+        </footer>
+    </body>
 </html>

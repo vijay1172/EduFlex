@@ -1,153 +1,274 @@
-body{
-    background-image: url(assets/kimberly-farmer-lUaaKCUANVI-unsplash.jpg);
-   background-size:cover;
+body {
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  background-size: cover;
 }
-.container{
-    margin: 30px;
-    padding: 8px;
-}
-.header_nav_pyq{
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-}
-.header_nav-logo{
-    width: 130px;
-}
-.header_nav-items_pyq{
-    display: flex;
-    gap: 25px;
-    align-items: center;
 
+.container {
+  margin: 30px;
+  padding: 8px;
 }
-.header_nav-item_pyq{
-    color:black;
-    font-family: cursive;
-    font-size: 20px;
-}
-.footer{
-    background-color: black;
-    text-align: center;
-    color: white;
-    position: relative;
-    top:600px;
-     
- }
- .footer_text{
-    text-align: center;
- }
- .header_nav-logo{
-    border-radius:75px;
- }
- .first_sec{
-    font-size: 34px;
-    text-align:right;
-    /* margin: 0px 200px; */
-    /* border: 5px solid peru;
-    border-radius: 40px; */
-    display:inline-block;
- }
- .first_sec{
-    margin-left:600px;
-    text-decoration:solid;
-    font-family:cursive;
 
- }
- .Menu{
-    display: flex;
-    justify-content:center;
-    position: relative;
-    justify-content:space-around;
-    font-size: 30px;
-    font-weight:300px;
-    border: 3px solid rgb(26, 24, 175);
-    border-radius: 40px;
-    gap: 20px;
+.header_nav_pyq {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  border-radius: 10px;
+  margin: 20px;
 }
-a:visited{
-    color:black;
-}
-.Menu{
-    position: relative;
-    display:flex;
-}
-  .dropdown-content{
-    display: none;
-    position: absolute;
-    background-color: #473f3f;
-    min-width: 140px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index:1;
-    border-radius: 30px;
-    overflow: hidden;
-    margin-top:0px;
-  }
-  .CS:hover .dropdown-content {
-    display: block;
-  }
-  .ECE:hover .dropdown-content {
-    display: block;
-  }
-  .Electrical:hover .dropdown-content {
-    display: block;
-  }
-  .Civil:hover .vijay {
-    display: block;
-  }
-  .Electrical{
-    display: block;
-  }
-  .vijay{
-    display: none;
-    position:absolute;
-    right: 4px;
-    background-color: #473f3f;
-    min-width: 140px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index:1;
-    border-radius: 30px;
-    overflow: hidden;
-    margin-top:0px;
-    top: 35px;
-  }
-  .Menu{
-    background: linear-gradient(100.5deg, rgb(148, 146, 236) 17.7%, rgb(245, 194, 194) 76.1%);
-  }
-  #CS ,#ECE,#Electrical,#Civil{
-    text-decoration: none;
-  }
-  .Menu{
-    box-shadow:3px;
-  }
-  .a{
-    text-decoration: none;
-  }
-  .dropdown-content{
-    box-shadow: 100px;
-  }
-  .a:hover{
-    background-color:blue;
-  }
-  .quote{
-    display: flex;
-    padding-left: 40px;
-    padding-right: 38px;
-    font-size: 30px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    justify-content: right;
-    text-align: right;
-    margin-top:200px;
-    margin-left: 550px;
 
+.header_nav-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 75px;
+}
+
+.header_nav-items-pyq {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.header_nav-items-pyq p:first-child {
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  height: 30px;
+  font-size: 20px;
+  justify-content: center;
+  padding: 5px 20px;
+  margin: 8px;
+  text-align: center;
+}
+
+
+.header_nav-items-pyq p:last-child {
+  /* border: 1px solid black; */
+  height: 30px;
+  justify-content: center;
+  font-size: 20px;
+  padding: 5px 20px;
+  margin: 8px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.header_nav-items-pyq p {
+  font-size: 20px;
+  padding: 5px 20px;
+  transition: transform 0.3s ease;
+}
+
+.header_nav-items-pyq p:hover {
+  transform: scale(1.1);
+}
+
+.header_pyq {
+  /* background-color: rgb(185, 170, 185); */
+  border-radius: 15px;
+}
+
+.header_nav-items-pyq a {
+  text-decoration: none;
+}
+
+.footer {
+  background-color: transparent;
+  text-align: center;
+  color:black;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.footer_text {
+  text-align: center;
+}
+
+.first_sec {
+  font-size: 34px;
+  text-align: right;
+  display: inline-block;
+}
+
+.first_sec p {
+  margin-left: 400px;
+  text-decoration: solid;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Menu {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  justify-content: space-around;
+  font-size: 30px;
+  font-weight: 300px;
+  gap: 20px;
+  /* background: linear-gradient(100.5deg, rgb(148, 146, 236) 17.7%, rgb(245, 194, 194) 76.1%); */
+}
+
+a:visited {
+  color: black;
+}
+
+.Menu {
+  position: relative;
+  display: flex;
+}
+.dropdown-content a:hover {
+  transform: scale(1.2); /* Zoom in effect on hover */
+}
+
+.dropdown-content {
+  display: block; 
+  position: relative;
+  background-color: #9680e6;
+  /* min-width: 140px; */
+  max-width: 100vw;
+  max-height: 100vh;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 12px;
+  z-index: 1;
+  border-radius: 30px;
+  height: 650px;
+  width: 280px;
+  overflow: hidden;
+  margin-top: 2px;
+}
+.dropdown-content a {
+  display: block;
+  transition: transform 0.3s ease-in-out;
+  opacity: 0; /* Initially hidden */
+  animation: slideDown 0.5s ease-out forwards; /* Apply the slide-down animation */
+  transition: width 0.4s ease-in-out;
+}
+
+.dropdown-content ab:hover {
+  transform: scale(1.2); /* Zoom in effect */
+}
+
+.dropdown-content a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: rgb(119, 119, 216);
+  bottom: -5px;
+  left: 0;
+  transition: width 0.4s ease-in-out;
+}
+
+.CS, .ECE, .Electrical, .Civil {
+  display: block;
+}
+
+.Menu {
+  box-shadow: 3px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
+
+a:hover {
+  /* background-color: rgb(162, 162, 162); */
+  transition: width 0.2s ease-in-out;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: rgb(119, 119, 216);
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* .quote {
+  display: flex;
+  padding-left: 40px;
+  padding-right: 38px;
+  font-size: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  justify-content: right;
+  text-align: right;
+  margin-top: 200px;
+  margin-left: 550px;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  margin-right: 50%;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  overflow: visible;
+} */
+.CS, .ECE, .Electrical, .Civil {
+  display: block;
+  opacity: 0; /* Initially hidden */
+  animation: slideIn 1s ease-out forwards; /* Apply the slide-in animation */
+}
+
+.CS {
+  animation-delay: 0.1s;
+}
+
+.ECE {
+  animation-delay: 0.2s;
+}
+
+.Electrical {
+  animation-delay: 0.3s;
+}
+
+.Civil {
+  animation-delay: 0.4s;
+}
+.CS .dropdown-content a {
+  animation-delay: 1.1s;
+}
+
+.ECE .dropdown-content a {
+  animation-delay: 1.2s;
+}
+
+.Electrical .dropdown-content a {
+  animation-delay: 1.3s;
+}
+
+.Civil .dropdown-content a {
+  animation-delay: 1.4s;
+}
+
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
   }
-  .quote{
-    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-    font-size: 30px;
-    padding: 30px 30px;
-    text-align: center;
-    text-transform: uppercase;
-    text-rendering: optimizeLegibility;
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
-    
+}
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
